@@ -1,0 +1,197 @@
+@font-face {
+  font-family: digital-clock;
+  src: url(/digital-7.ttf);
+}
+@font-face {
+  font-family: louis-serif;
+  src: url(/louis-serif.ttf);
+}
+body {
+  font-family: digital-clock;
+  font-size: 20px;
+  text-align: center;
+  background-color: #e7e7e7;
+  transition: 1s;
+}
+
+#clock {
+  width: 450px;
+  margin: auto;
+  display: relative;
+  background-color: #dddbd8;
+  border-radius: 3px;
+  border: 3px inset #f5f5f5;
+  transition: 1s;
+}
+#clock #settings {
+  padding: 20px;
+  opacity: 0;
+  height: 0;
+  transition: 1s;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+#clock #settings .input {
+  margin: 5px;
+  border: 3px inset #f5f5f5;
+  border-radius: 3px;
+  font-family: louis-serif;
+  color: #0d0f18;
+  padding: 5px 15px;
+  background-color: #e7e7e7;
+  transition: 1s;
+}
+#clock #settings input.input {
+  margin: 5px;
+}
+#clock #settings .input:hover {
+  background-color: #f5f5f5;
+  transition: 1s;
+}
+#clock #settings.open {
+  opacity: 100%;
+  transition: 1s;
+  height: 172px;
+  transition: 1s;
+}
+#clock #menu-btn {
+  transform: rotate(180deg);
+  height: 25px;
+  margin: 0;
+  color: #b6b1ab;
+  transition: 0.5s;
+}
+#clock #menu-btn:hover {
+  cursor: pointer;
+}
+#clock #menu-btn.open {
+  transition: 0.5s;
+  transform: rotate(0deg);
+  color: #0d0f18;
+}
+#clock #alarm-icon {
+  position: relative;
+  left: 0;
+  width: 2rem;
+  filter: invert(82%) sepia(3%) saturate(546%) hue-rotate(353deg) brightness(89%) contrast(83%);
+  transition: 0.5s;
+}
+#clock #alarm-icon.set {
+  filter: invert(5%) sepia(6%) saturate(6128%) hue-rotate(186deg) brightness(91%) contrast(90%);
+  transition: 0.5s;
+}
+#clock #dayOfTheWeek {
+  font-family: louis-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0px;
+  margin: 0px;
+  transition: 1s;
+}
+#clock #dayOfTheWeek .day {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0px 5px;
+  margin: 0px 5px;
+  color: #b6b1ab;
+  transition: 1s;
+}
+#clock #dayOfTheWeek .today {
+  color: #0d0f18;
+  transition: 1s;
+}
+#clock #time {
+  font-size: 100px;
+  font-weight: normal;
+  display: inline-block;
+  width: 317px;
+  padding: 0;
+  margin: 0;
+  color: #0d0f18;
+  transition: 1s;
+}
+#clock #ampm {
+  font-family: louis-serif;
+  font-size: 18px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  color: #b6b1ab;
+  transition: 1s;
+}
+#clock #ampm #am {
+  display: block;
+}
+#clock #ampm #pm {
+  display: block;
+}
+#clock #ampm #am.time,
+#clock #ampm #pm.time {
+  color: #0d0f18;
+  transition: 1s;
+}
+
+body.dark-mode {
+  background-color: #1e2131;
+}
+
+#clock.dark-mode {
+  background-color: #373a49;
+  border: 3px inset #3c415a;
+  transition: 1s;
+}
+#clock.dark-mode #settings .input {
+  border: 3px inset #3c415a;
+  color: #dddbd8;
+  background-color: #1e2131;
+}
+#clock.dark-mode #settings .input:hover {
+  background-color: #3c415a;
+}
+#clock.dark-mode #menu-btn {
+  color: #121620;
+}
+#clock.dark-mode #menu-btn.open {
+  color: #dddbd8;
+}
+#clock.dark-mode #alarm-icon {
+  filter: invert(5%) sepia(6%) saturate(6128%) hue-rotate(186deg) brightness(91%) contrast(90%);
+  transition: 0.5s;
+}
+#clock.dark-mode #alarm-icon.set {
+  filter: invert(82%) sepia(3%) saturate(546%) hue-rotate(353deg) brightness(89%) contrast(83%);
+  transition: 0.5s;
+}
+#clock.dark-mode #dayOfTheWeek .day {
+  color: #121620;
+}
+#clock.dark-mode #dayOfTheWeek .today {
+  color: #dddbd8;
+}
+#clock.dark-mode #time {
+  color: #dddbd8;
+}
+#clock.dark-mode #ampm {
+  color: #121620;
+}
+#clock.dark-mode #ampm #am.time,
+#clock.dark-mode #ampm #pm.time {
+  color: #dddbd8;
+}
+
+@media screen and (max-width: 400px) {
+  #clock {
+    width: auto;
+  }
+  #clock #dayOfTheWeek .day {
+    padding: 0;
+    margin: 0;
+  }
+  #clock #time {
+    font-size: 68px;
+    width: 250px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

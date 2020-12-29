@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ's Alarm Clock!</title>
+    <link rel="icon" href="alarm-clock-icon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="startClock()" class="">
+    <div id="clock" class="">
+        <form id="settings">
+            <button class="input" type="submit">Set Alarm</button>
+            <button class="input" type="reset">Stop Alarm</button>
+            <audio src="/alarm-clock-sound.wav" id="alarm-sound" loop></audio>
+            <button id="dark-btn" type="button" class="input" onclick="darkMode()">Dark Mode</button>
+            <input type="time" required id="alarm-input" class="input">
+        </form>
+        <h1 id="menu-btn" onclick="openMenu()">^</h1>
+        <ul id="dayOfTheWeek">
+            <li class="day">SUN</li>
+            <li class="day">MON</li>
+            <li class="day">TUE</li>
+            <li class="day">WED</li>
+            <li class="day">THU</li>
+            <li class="day">FRI</li>
+            <li class="day">SAT</li>
+        </ul>
+        <img src="/alarm-clock.svg" id="alarm-icon" class="">
+        <h1 id="time"> 00:00:00 </h1>
+        <ul id="ampm">
+            <li id="am">AM</li>
+            <li id="pm">PM</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+$dark-main-background: #1e2131;
+$dark-clock-background: #373a49;
+$dark-inset: #3c415a;
+$dark-font-main: #dddbd8;
+$dark-font-faded: #121620;
+
+$light-main-background: #e7e7e7;
+$light-clock-background: #dddbd8;
+$light-inset: #f5f5f5;
+$light-font-main: #0d0f18;
+$light-font-faded: #b6b1ab;
+
+@font-face {
+    font-family: digital-clock;
+    src: url(/digital-7.ttf);
+}
+
+@font-face {
+    font-family: louis-serif;
+    src: url(/louis-serif.ttf);
+}
+
+body {
+    font-family: digital-clock;
+    font-size: 20px;
+    text-align: center;
+    background-color: $light-main-background;
+    transition: 1s;
+}
+
+
+
+
+#clock {
+    width: 450px;
+    margin: auto;
+    display: relative;
+    background-color: $light-clock-background;
+    border-radius: 3px;
+    border: 3px inset $light-inset;
+    transition: 1s;
+
+    #settings {
+        padding: 20px;
+        opacity: 0;
+        height: 0;
+        transition: 1s;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        .input {
+            margin: 5px;
+            border: 3px inset $light-inset;
+            border-radius: 3px;
+            font-family: louis-serif;
+            color: $light-font-main;
+            padding: 5px 15px;
+            background-color: $light-main-background;
+            transition: 1s;
+        }
+
+        input.input{
+            margin: 5px;
+        }
+
+        .input:hover {
+            background-color: $light-inset;
+            transition: 1s;
+        }
+    }
+
+    #settings.open {
+        opacity: 100%;
+        transition: 1s;
+        height: 172px;
+        transition: 1s;
+    }
+
+    #menu-btn {
+        transform: rotate(180deg);
+        height: 25px;
+        margin: 0;
+        color: $light-font-faded;
+        transition: .5s;
+    }
+
+    #menu-btn:hover {
+        cursor: pointer;
+    }
+
+    #menu-btn.open {
+        transition: .5s;
+        transform: rotate(0deg);
+        color: $light-font-main;
+    }
+
+    #alarm-icon {
+        position: relative;
+        left: 0;
+        width: 2rem;
+        filter: invert(82%) sepia(3%) saturate(546%) hue-rotate(353deg) brightness(89%) contrast(83%);
+        transition: .5s;
+    }
+
+    #alarm-icon.set{
+        filter: invert(5%) sepia(6%) saturate(6128%) hue-rotate(186deg) brightness(91%) contrast(90%);
+        transition: .5s;
+    }
+
+    #dayOfTheWeek {
+        font-family: louis-serif;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0px;
+        margin: 0px;
+        transition: 1s;
+
+        .day {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0px 5px;
+            margin: 0px 5px;
+            color: $light-font-faded;
+            transition: 1s;
+        }
+
+        .today {
+            color: $light-font-main;
+            transition: 1s;
+        }
+    }
+
+    #time {
+        font-size: 100px;
+        font-weight: normal;
+        display: inline-block;
+        width: 317px;
+        padding: 0;
+        margin: 0;
+        color: $light-font-main;
+        transition: 1s;
+    }
+
+    #ampm {
+        font-family: louis-serif;
+        font-size: 18px;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        color: $light-font-faded;
+        transition: 1s;
+
+        #am {
+            display: block;
+        }
+
+        #pm {
+            display: block;
+        }
+
+        #am.time,
+        #pm.time {
+            color: $light-font-main;
+            transition: 1s;
+        }
+
+    }
+
+}
+
+body.dark-mode {
+    background-color: $dark-main-background;
+}
+
+#clock.dark-mode {
+    background-color: $dark-clock-background;
+    border: 3px inset $dark-inset;
+    transition: 1s;
+
+    #settings {
+        .input {
+            border: 3px inset $dark-inset;
+            color: $dark-font-main;
+            background-color: $dark-main-background;
+        }
+
+        .input:hover {
+            background-color: $dark-inset;
+        }
+    }
+
+    #menu-btn {
+        color: $dark-font-faded;
+    }
+
+    #menu-btn.open {
+        color: $dark-font-main;
+    }
+
+    #alarm-icon {
+        filter: invert(5%) sepia(6%) saturate(6128%) hue-rotate(186deg) brightness(91%) contrast(90%);
+        transition: .5s;
+    }
+    #alarm-icon.set{
+        filter: invert(82%) sepia(3%) saturate(546%) hue-rotate(353deg) brightness(89%) contrast(83%);
+        transition: .5s;
+    }
+    #dayOfTheWeek {
+
+        .day {
+            color: $dark-font-faded;
+        }
+
+        .today {
+            color: $dark-font-main;
+        }
+    }
+
+    #time {
+
+        color: $dark-font-main;
+    }
+
+    #ampm {
+        color: $dark-font-faded;
+
+        #am.time,
+        #pm.time {
+            color: $dark-font-main;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    #clock {
+        width: auto;
+
+        #dayOfTheWeek {
+            .day {
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        #time {
+            font-size: 68px;
+            width: 250px;
+        }
+    }
+
+}
